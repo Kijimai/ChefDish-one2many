@@ -1,0 +1,29 @@
+@model List<Dish>
+
+<div class="d-flex justify-content-between align-items-center w-100">
+  <h2>Yum, take a look at our tasty dishes!</h2>
+  <a href="/add_dish">Add a Dish</a>
+</div>
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Chef</th>
+      <th>Tastiness</th>
+      <th>Calories</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>@item.Name</td>
+        <td>@item.Author.FirstName @item.Author.LastName</td>
+        <td>@item.Tastiness</td>
+        <td>@item.Calories</td>
+      </tr>
+    }
+  </tbody>
+</table>

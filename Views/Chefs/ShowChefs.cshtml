@@ -1,0 +1,28 @@
+@model List<Chef>
+
+<div class="d-flex justify-content-between align-items-center w-100">
+  <h2>Check out our roster of Chefs!</h2>
+  <a href="/add_chef">Add a Chef</a>
+</div>
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td># of Dishes</td>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var chef in Model)
+    {
+      <tr>
+        <td>@chef.FirstName @chef.LastName</td>
+        <td>@(DateTime.Now.Year - chef.BirthDay.Year)</td>
+        <td>@chef.Dishes.Count</td>
+      </tr>
+    }
+  </tbody>
+
+</table>

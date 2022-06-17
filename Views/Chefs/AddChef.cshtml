@@ -1,0 +1,21 @@
+@model Chef
+
+<form asp-controller="Chefs" asp-action="Create" method="POST">
+  <div class="mb-4">
+    <label asp-for="FirstName"></label>
+    <span asp-validation-for="FirstName"></span>
+    <input asp-for="FirstName">
+  </div>
+  <div class="mb-4">
+    <label asp-for="LastName"></label>
+    <span asp-validation-for="LastName"></span>
+    <input asp-for="LastName">
+  </div>
+  <div class="mb-4">
+    <label asp-for="BirthDay"></label>
+    <span asp-validation-for="BirthDay"></span>
+    <input type="date" asp-for="BirthDay">
+  </div>
+
+  <button>Add Chef</button>
+</form>
